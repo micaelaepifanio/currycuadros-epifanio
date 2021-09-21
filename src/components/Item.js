@@ -1,11 +1,9 @@
 import { Container, Image } from "react-bootstrap";
+import ItemDetailContainer from "./ItemDetailContainer";
 const Item = (props) => {
     return (
             <Container>
-               <h2>{props.itemData.title}</h2>
-               <p>{props.itemData.id}</p>
-               <p>{props.itemData.price}</p>
-               <Image src =  {props.itemData.pictureUrl} thumbnail></Image>
+               <ItemDetailContainer id={props.itemData.id}/>
             </Container>
     )
 }
