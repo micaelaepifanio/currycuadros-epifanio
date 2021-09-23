@@ -13,10 +13,12 @@ const ItemList = (props) => {
     return new Promise((resolve,reject) =>{
         setTimeout(() => resolve([ 
             {
+                nombre: "Árboles",
                 id: "1234"
 
             },
             {
+                nombre: "Caracoles",
                 id: "5678"
             }
         ]), 2000)

@@ -1,9 +1,11 @@
-import { Container, Image } from "react-bootstrap";
-import ItemDetailContainer from "./ItemDetailContainer";
+import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+
 const Item = (props) => {
     return (
             <Container>
-               <ItemDetailContainer id={props.itemData.id}/>
+                <p>{props.itemData.nombre}</p>
+               <Link to={"/item/" + props.itemData.id }>Ver detalle</Link>
             </Container>
     )
 }

@@ -2,7 +2,7 @@ import { Container, Image } from "react-bootstrap";
 const CartWidget = (props) => {
     return (
             <Container>
-               <Image src =  {props.path} thumbnail></Image>
+               <Image src ="/carrito.png" thumbnail></Image>
             </Container>
     )
 }
