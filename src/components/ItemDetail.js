@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { Container, Image, Row, Col } from "react-bootstrap";
 import ItemCount from "./ItemCount";
+import { useCart } from "../contexts/CartContext";
 
 const CountDetail = (props) => {
     return  <p>Cantidad comprada: {props.quantity}</p>
 }
 
 const ItemDetail = (props) => {
-
+    const cart = useCart();
     const [quantity, setQuantity] = useState(0)
 
-    const addQty = (qty) => setQuantity (qty)
-
+    const addQty = (qty) => {
+        setQuantity (qty)
+       cart.addItem(props.content, qty)
+    }
     const Count = quantity === 0 ? ItemCount : CountDetail
+
+
 
     return (
             <Container>
