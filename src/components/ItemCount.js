@@ -10,6 +10,8 @@ const ItemCount = (props) => {
         }
     }
 
+    
+
     const decrement = () => {
         if(counter > 0){
             setCounter(counter - 1)
@@ -17,7 +19,7 @@ const ItemCount = (props) => {
     }
     
     const onAdd = () => {
-        alert("se agregaron " + counter + " items al carrito") 
+        props.addQty(counter)
     }
 
     return (
