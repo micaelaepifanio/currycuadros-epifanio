@@ -8,8 +8,13 @@ import { useState, createContext, useContext } from "react";
     const [cart, setCart] = useState({addedItems : []});
   
     const addItem = (item, qty) => {
-      if (isInCart(item)) {
-        alert("El item ya existe en el carrito")
+      if (isInCart(item.id)) {
+        const items =  cart.addedItems;
+        const index = items.findIndex(element => element.id == item.id)
+        items[index].qty =  parseInt(items[index].qty) + parseInt(qty)
+
+        setCart({addedItems : items});
+
         return;
       }
 
@@ -27,20 +32,40 @@ import { useState, createContext, useContext } from "react";
         setCart({addedItems : []});
       };
     
-    const isInCart = (item) => {
-        return (cart.addedItems.some((addedItem) => addedItem.id === item.id))
+    const isInCart = (id) => {
+        return (cart.addedItems.some((addedItem) => addedItem.id === id))
     }
 
-    const removeItem = (item) => {
-        if(isInCart(item)){
+    const removeItem = (id) => {
+        if(isInCart(id)){
             const products = cart.addedItems;
-            const filteredProducts = products.filter((itemToRemove) => itemToRemove.id == item)
+            const filteredProducts = products.filter((itemToRemove) => itemToRemove.id != id)
             setCart({addedItems : filteredProducts});
         }
     }
 
+    const getItems = () => cart.addedItems
+
+    const getTotalItemQty = () => {
+      let result = 0;
+      getItems().forEach(i => {
+          result = result + parseInt(i.qty)}
+        );
+
+      return result
+    }
+
+    const getTotalPrice = () => {
+      let result = 0;
+      getItems().forEach(i => {
+          result = result + (parseInt(i.qty) * parseInt(  i.price.replace(/\D/g, "")))}
+        );
+
+      return result
+    }
+
     return (
-      <CartContext.Provider value={{ cart, clear, addItem, removeItem }}>
+      <CartContext.Provider value={{ cart, clear, addItem, removeItem, getItems, getTotalItemQty, getTotalPrice }}>
         {children}
       </CartContext.Provider>
     );

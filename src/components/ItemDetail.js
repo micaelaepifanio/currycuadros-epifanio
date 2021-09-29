@@ -16,9 +16,6 @@ const ItemDetail = (props) => {
        cart.addItem(props.content, qty)
     }
     const Count = quantity === 0 ? ItemCount : CountDetail
-
-
-
     return (
             <Container>
 

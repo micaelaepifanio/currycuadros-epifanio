@@ -14,13 +14,13 @@ const ItemDetailContainer = () => {
 
     function getDetail (id) {
     return new Promise((resolve,reject) =>{
-        setTimeout(() => resolve(findItem (id)), 2000)
+        setTimeout(() => resolve(findItem (id)), 500)
     })
     }
 
     function findItem (id) {
         console.log (id)
-        if (id == "5678") {
+        if (id == "1234") {
             return {
                 id,
                 title: "Arboles",

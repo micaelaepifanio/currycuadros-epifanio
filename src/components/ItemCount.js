@@ -10,8 +10,6 @@ const ItemCount = (props) => {
         }
     }
 
-    
-
     const decrement = () => {
         if(counter > 0){
             setCounter(counter - 1)

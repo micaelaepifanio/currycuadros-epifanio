@@ -21,7 +21,7 @@ const ItemList = (props) => {
                 nombre: "Caracoles",
                 id: "5678"
             }
-        ]), 2000)
+        ]), 500)
     })
 }
 
