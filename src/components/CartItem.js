@@ -14,7 +14,7 @@ const CartItem = (props) => {
                     </Col>
                     <Col xs={6} md={4}>
                         <Card body>
-                            <h3>{props.content.title}</h3>
+                            <h3>{props.content.nombre}</h3>
                             <p>{props.content.price}</p>
                             <p>Cantidad :{props.content.qty}</p>
                             Eliminar <Button variant="danger"  onClick={removeItem}>x</Button>

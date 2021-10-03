@@ -23,7 +23,7 @@ const ItemDetail = (props) => {
                 <Col xs={6} md={4}>
                 </Col>
                 <Col xs={6} md={4}>
-                    <h2>{props.content.title}</h2>
+                    <h2>{props.content.nombre}</h2>
                     <p>{props.content.id}</p>
                     <p>{props.content.price}</p>
                     <Image src ={props.content.pictureUrl} thumbnail></Image>

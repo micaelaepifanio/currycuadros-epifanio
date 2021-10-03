@@ -58,7 +58,7 @@ import { useState, createContext, useContext } from "react";
     const getTotalPrice = () => {
       let result = 0;
       getItems().forEach(i => {
-          result = result + (parseInt(i.qty) * parseInt(  i.price.replace(/\D/g, "")))}
+          result = result + (parseInt(i.qty) * parseInt(  i.precio))}
         );
 
       return result
