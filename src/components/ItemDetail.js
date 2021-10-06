@@ -24,7 +24,6 @@ const ItemDetail = (props) => {
                 </Col>
                 <Col xs={6} md={4}>
                     <h2>{props.content.nombre}</h2>
-                    <p>{props.content.id}</p>
                     <p>{props.content.price}</p>
                     <Image src ={props.content.pictureUrl} thumbnail></Image>
                     <Count stock="10" addQty={addQty} initial="1"  quantity={quantity}/>

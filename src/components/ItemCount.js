@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Container, Button, Row, Col} from "react-bootstrap";
 const ItemCount = (props) => {
 
-    const [counter, setCounter] = useState(props.initial)
+    const [counter, setCounter] = useState(parseInt(props.initial))
 
     const increment = () =>  {
         if(counter < props.stock){
