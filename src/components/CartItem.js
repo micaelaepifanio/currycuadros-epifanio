@@ -8,7 +8,7 @@ const CartItem = (props) => {
 
 
     return (
-            <Container>
+            <Container className = "cart-item-container">
                 <Row>
                     <Col xs={6} md={4}>
                     </Col>
@@ -17,7 +17,7 @@ const CartItem = (props) => {
                             <h3>{props.content.nombre}</h3>
                             <p>{props.content.price}</p>
                             <p>Cantidad :{props.content.qty}</p>
-                            Eliminar <Button variant="danger"  onClick={removeItem}>x</Button>
+                            <Button className='close-button' variant="danger"  onClick={removeItem}>x</Button>
                         </Card>
                     </Col>
                     <Col xs={6} md={4}>

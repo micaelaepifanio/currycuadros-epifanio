@@ -25,10 +25,11 @@ const ItemDetail = (props) => {
                 <Col xs={6} md={4}>
                     <h2>{props.content.nombre}</h2>
                     <p>{props.content.price}</p>
-                    <Image src ={props.content.pictureUrl} thumbnail></Image>
-                    <Count stock="10" addQty={addQty} initial="1"  quantity={quantity}/>
+                    <Image className = 'imagen-detalle' src ={props.content.pictureUrl} thumbnail></Image>
+                   
                 </Col>
                 <Col xs={6} md={4}>
+                 <Count stock="10" addQty={addQty} initial="1"  quantity={quantity}/>
                 </Col>
             </Row>
         

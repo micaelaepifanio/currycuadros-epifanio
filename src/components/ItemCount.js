@@ -21,21 +21,25 @@ const ItemCount = (props) => {
     }
 
     return (
-            <Container>
+            <Container className = 'count-container'>
+                <p>Cantidad</p>
                 <Row className="justify-content-md-center">
+                <Col></Col>
                     <Col> 
-                        <Button variant="outline-success" onClick={decrement}>-</Button>
+                        <Button className ='count-button' onClick={decrement}>-</Button>
                     </Col>
                     <Col> 
                         <p>{counter}</p>
                     </Col>
                     <Col> 
-                        <Button variant="outline-success" onClick={increment}>+</Button>
+                        <Button className ='count-button' onClick={increment}>+</Button>
                     </Col>
+                    <Col></Col>
                 </Row>
+                <br/>
                 <Row>
                     <Col>                 
-                        <Button variant="outline-success" onClick={onAdd}>Agregar al carrito</Button>
+                        <Button className ='count-button-add' onClick={onAdd}>Agregar al carrito</Button>
                     </Col>
                 </Row>
             </Container>

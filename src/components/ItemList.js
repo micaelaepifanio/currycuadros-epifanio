@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Row , Col} from "react-bootstrap";
 import Item from "./Item";
 import {getDb} from "../services/firebase";
 import { collection, getDocs } from 'firebase/firestore'
 
-const ItemList = (props) => {
+const ItemList = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -16,7 +16,6 @@ const ItemList = (props) => {
                         return { id: doc.id, ...doc.data() }
                     }) 
                     setItems(products)
-                    console.dir(products)
         }).catch((error) => {
             console.log(error);
         }).finally(() => {
@@ -26,15 +25,16 @@ const ItemList = (props) => {
     },[])
 
     return (
-            <Container>
+            <Row>
+
               {loading &&
                 <p>LOADING</p>
               }  
               {!loading && 
-                items.map (i => {return <Item itemData={i}/> })
+                items.map (i => {return <Col className = 'columnita'><Item itemData={i}/></Col>})
               } 
               
-            </Container>
+            </Row>
     )
 }
 

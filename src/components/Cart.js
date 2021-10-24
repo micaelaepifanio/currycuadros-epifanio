@@ -1,5 +1,5 @@
 import { useCart } from "../contexts/CartContext";
-import { Container, Button, Row } from "react-bootstrap";
+import { Container, Button, Row, Col } from "react-bootstrap";
 import CartItem from "./CartItem";
 import { 
   collection, addDoc, getDoc, doc ,
@@ -52,19 +52,27 @@ const Cart = (props) => {
 
 
     return (
-            <Container>
+        <div className = "body-bg">
+            <Container className = 'carrito-general'>
                 <h2> Carrito </h2>
                 <p>Precio total: ${cart.getTotalPrice()}</p>
               { 
                 cart.getItems().map (i => {return <CartItem content={i}/> })
               } 
-              
-                 <Button  onClick={eraseAll}>Borrar todos</Button>
-                 <br />
-               <Button  onClick={confirmOrder}>Comprar carrito</Button>
+              <Row>
+                  <Col></Col>
+                  <Col>
+                  <Button className = 'boton-carrito' onClick={eraseAll}>Borrar todos</Button>
+               
+               <Button className = 'boton-carrito' onClick={confirmOrder}>Comprar carrito</Button>
+               </Col>
+               <Col></Col>
+               </Row>
+
              
               
             </Container>
+            </div>
     )
 }
 

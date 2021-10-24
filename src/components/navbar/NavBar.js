@@ -1,11 +1,12 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
-import CartWidget from "./CartWidget";
+import CartWidget from "../CartWidget";
+import './navbar.css'
 import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
             <Container>
                 <Link to={"/" }><Navbar.Brand href="/">Curry Cuadros</Navbar.Brand></Link>
                 
@@ -13,7 +14,7 @@ const NavBar = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Link to={"/" }><Nav.Link href="/">Home</Nav.Link></Link>
-                    <Link to={"/category/catalogo_tbd" }> <Nav.Link >Productos</Nav.Link></Link>
+                    <Link to={"/category/catalogo" }> <Nav.Link href="/category/catalogo" >Productos</Nav.Link></Link>
                 </Nav>
                 </Navbar.Collapse>
                 <CartWidget />

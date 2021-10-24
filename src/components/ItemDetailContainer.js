@@ -9,8 +9,6 @@ const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
     const [loading, setLoading] = useState(false);
     const { id } = useParams();    
-    
-    
 
     useEffect ( () => {
         setLoading(true);
@@ -29,8 +27,8 @@ const ItemDetailContainer = () => {
 
 
     return (
-        
-            <Container>
+            <div className = "body-bg">
+             <Container>
                      {loading &&
                 <p>LOADING</p>
               }  
@@ -40,6 +38,8 @@ const ItemDetailContainer = () => {
                 
                 
             </Container>
+            </div>
+           
     )
 }
 
